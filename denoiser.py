@@ -205,7 +205,7 @@ def deconv(x, filter_num, window_size, act, max_pool, dp_rate=0):
     return y
 
 
-def denoiser(lr, input_length):
+def denoiser(input_length):
     img_input = Input(shape=(input_length, 1))
     # encoder
     x = conv(img_input, 256, 2, 'selu', 0)
@@ -310,7 +310,7 @@ if __name__ == "__main__":
     Y_clean = scale(Y_clean_o)
 
     print('train model...')
-    autoencoder = denoiser(0.0001, len(X_noisy[0]))
+    autoencoder = denoiser(len(X_noisy[0]))
     #autoencoder = load_model(model_dir)
 
     autoencoder.fit(X_noisy[:10000], Y_clean[:10000],
