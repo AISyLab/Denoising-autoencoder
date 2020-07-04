@@ -224,7 +224,7 @@ def denoiser(input_length):
     x = conv(x, 64, 2, 'selu', 2)
     x = Flatten(name='flatten')(x)
     # latent space
-    x = Dense(700, activation='selu', name='embedding')(x)
+    x = Dense(512, activation='selu', name='embedding')(x)
     # decoder
     x = Dense(2240, activation='selu')(x)
     x = Reshape((35, 64))(x)
