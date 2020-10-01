@@ -171,8 +171,8 @@ def generate_traces(ascad_database, new_traces_file, train_data, attack_data,
 
 if __name__ == "__main__":
 
-    clean_trace_dir = "/home/nfs/lwu3/ASCAD/Trace/Noisy_traces/Noisy_desync_50.h5"
-    noisy_traces_dir = "/home/nfs/lwu3/ASCAD/Trace/Noisy_traces/Noisy_all.h5"
+    clean_trace_dir = "clean.h5"
+    noisy_traces_dir = "noisy.h5"
 
     # load traces
     print('load traces...')
