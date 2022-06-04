@@ -229,7 +229,7 @@ def deconv(x, filter_num, window_size, act, max_pool, dp_rate = 0):
     y = Dropout(dp_rate)(y)
   return y
 
-def old_cnn(lr, input_length):
+def DAE(lr, input_length):
     img_input = Input(shape=(input_length, 1))
     #encoder
     x = conv(img_input, 256, 2, 'selu', 0)
@@ -292,7 +292,7 @@ if __name__ == "__main__":
     Y_clean = scale(Y_clean_o) 
     
     print('train model...')
-    autoencoder = old_cnn(0.0001, len(X_noisy[0]))
+    autoencoder = DAE(0.0001, len(X_noisy[0]))
     #autoencoder = load_model(model_dir)
 
     # save_model = ModelCheckpoint(model_dir)
