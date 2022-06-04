@@ -305,8 +305,8 @@ if __name__ == "__main__":
     #(X_profiling, Y_profiling) = shuffle_data(X_profiling, Y_profiling)
 
     # Choose your model
-    #model = cnn_best(len(X_profiling[0]))
-    model = mlp_best(len(X_profiling[0]))
+    model = cnn_best(len(X_profiling[0]))
+    #model = mlp_best(len(X_profiling[0]))
     #model = load_model(trained_model)
 
     # Record the metrics
